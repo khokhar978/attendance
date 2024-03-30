@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Listing</title>
+</head>
+<body>
+    <h1>Class Listing</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Class Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="class : ${classes}">
+                <td th:text="${class.id}"></td>
+                <td th:text="${class.className}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/admin/add-class">Add New Class</a>
+</body>
+</html>

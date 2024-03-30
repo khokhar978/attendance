@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Attendance</title>
+</head>
+<body>
+    <h1>Manage Attendance</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student ID</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="attendance : ${attendanceRecords}">
+                <td th:text="${attendance.id}"></td>
+                <td th:text="${attendance.studentId}"></td>
+                <td th:text="${attendance.date}"></td>
+                <td th:text="${attendance.status ? 'Present' : 'Absent'}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/teacher/take-attendance">Take Attendance</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- teachers.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+    <!-- Add any CSS links or stylesheets here -->
+</head>
+<body>
+    <h1>Teachers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Use Thymeleaf iteration to populate table with teacher data -->
+            <tr th:each="teacher : ${teachers}">
+                <td th:text="${teacher.id}"></td>
+                <td th:text="${teacher.firstName}"></td>
+                <td th:text="${teacher.lastName}"></td>
+                <!-- Add more columns as needed -->
+            </tr>
+        </tbody>
+    </table>
+    <!-- Add any additional content or functionality here -->
+    
+    <!-- Add any JavaScript scripts or links here -->
+</body>
+</html>
